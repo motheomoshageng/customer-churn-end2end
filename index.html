@@ -1,0 +1,47 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Jul 11 11:14:44 2025
+
+@author: Motheo Moshageng
+"""
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+  <!-- Make it compatible to mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CUSTOMER CHURN</title>
+  
+</head>
+
+<body style="background: #000;">
+ <div class="login">
+	<h1 style="color:Violet;">MY CUSTOMERS </h1>
+
+     <!-- Action is where the data is sent. In our case, predict page.
+     If action is omitted, it assumed to be the current page -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="AGE" placeholder="AGE" required="required" /><br>
+        <input type="text" name="GENDER" placeholder="GENDER" required="required" /><br>
+        <input type="text" name="TENURE" placeholder="TENURE" required="required" /><br>
+        <input type="text" name="MONTHLY CHARGES" placeholder="MONTHLY CHARGES" required="required" /><br>
+        <input type="text" name="CONTRACTTYPE" placeholder="CONTRACT TYPE" required="required" /><br>
+        
+        <p>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">CUSTOMER CHURN</button></p>
+    </form>
+
+   <br>
+   <br>
+   <h4 style="color:Violet;">
+   {{ prediction_text }} </h4>
+
+ </div>
+
+
+</body>
+</html>
